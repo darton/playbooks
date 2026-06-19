@@ -2,4 +2,4 @@
 
 allowed_ip: null
 
-ssh_pub_key: "1111111111111111111111111111111111111111111111111"
+ssh_pub_key: null

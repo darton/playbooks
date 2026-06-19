@@ -1,5 +1,9 @@
 - name: Install authorized_keys file
-  ansible.builtin.authorized_key:
+  authorized_key:
     user: "{{ user }}"
+    key: "{{ lookup('file', ssh_pub_key) }}"
     state: present
-    key: "{{ ssh_pub_key }}"
+  when:
+    - ssh_pub_key is not none
+    - ssh_pub_key | length > 0
+    - ssh_pub_key is file
