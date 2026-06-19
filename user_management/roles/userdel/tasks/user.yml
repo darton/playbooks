@@ -1,0 +1,14 @@
+---
+- name: Validate required variables
+  assert:
+    that:
+      - user is defined
+      - user | length > 0
+    fail_msg: "user name must be provided and not empty, use: ansible-playbook -e user=username"
+
+- name: Remove user and home directory
+  user:
+    name: "{{ user }}"
+    state: absent
+    remove: yes
+

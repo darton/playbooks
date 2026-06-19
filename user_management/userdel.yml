@@ -1,0 +1,7 @@
+---
+- hosts: wsl
+  become: yes
+
+  roles:
+    - role: userdel
+

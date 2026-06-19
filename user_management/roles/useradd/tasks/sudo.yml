@@ -1,0 +1,4 @@
+- name: Ensure sudo is installed
+  package:
+    name: sudo
+    state: present

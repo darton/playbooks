@@ -1,0 +1,14 @@
+
+- name: Install authorized_keys file
+  copy:
+    dest: "/home/{{ user }}/.ssh/authorized_keys"
+    content: "{{ ssh_pub_key }}\n"
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: '0600'
+
+
+- name: Fix SELinux context
+  command: restorecon -Rv /home/{{ user }}/.ssh
+  when: ansible_facts['os_family'] == 'RedHat'
+

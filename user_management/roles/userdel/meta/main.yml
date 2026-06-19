@@ -1,0 +1,8 @@
+---
+galaxy_info:
+  role_name: userdel
+  author: Dariusz Kowalczyk
+  description: Deprovision privileged user and revoke SSH access
+  license: MIT
+  min_ansible_version: "2.12"
+

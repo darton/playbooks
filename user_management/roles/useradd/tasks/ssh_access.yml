@@ -1,0 +1,9 @@
+- name: Restrict user login to specific IP
+  blockinfile:
+    path: /etc/ssh/sshd_config
+    marker: "# {mark} ANSIBLE_SSH_{{ user | upper }}"
+    block: |
+      Match User {{ user }}
+          AllowUsers {{ user }}@{{ allowed_ip }}
+  notify: restart ssh
+

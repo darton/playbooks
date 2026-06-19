@@ -1,0 +1,6 @@
+---
+- name: Remove sudoers file for user
+  file:
+    path: "/etc/sudoers.d/{{ user }}"
+    state: absent
+

@@ -1,0 +1,14 @@
+---
+- name: Remove SSH Match block for user
+  blockinfile:
+    path: /etc/ssh/sshd_config
+    marker: "# {mark} ANSIBLE_SSH_{{ user | upper }}"
+    state: absent
+  notify: restart ssh
+- name: Remove SSH Match block for user
+  blockinfile:
+    path: /etc/ssh/sshd_config
+    marker: "# {mark} ANSIBLE_SSH_{{ user | upper }}"
+    state: absent
+  notify: restart ssh
+

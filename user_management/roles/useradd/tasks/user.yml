@@ -1,0 +1,14 @@
+- name: Validate required variables
+  assert:
+    that:
+      - user is defined
+      - user | length > 0
+    fail_msg: "user variable must be provided and not empty, use: ansible-playbook -e user=usename"
+
+- name: Create user
+  user:
+    name: "{{ user }}"
+    shell: /bin/bash
+    create_home: yes
+    state: present
+

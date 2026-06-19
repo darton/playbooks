@@ -1,0 +1,11 @@
+---
+
+- name: Remove user account and home
+  import_tasks: user.yml
+
+- name: Remove sudo privileges
+  import_tasks: sudo.yml
+
+- name: Remove SSH access rules
+  import_tasks: ssh.yml
+
