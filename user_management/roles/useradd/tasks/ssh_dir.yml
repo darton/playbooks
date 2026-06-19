@@ -1,8 +1,0 @@
-- name: Create .ssh directory
-  file:
-    path: "/home/{{ user }}/.ssh"
-    state: directory
-    owner: "{{ user }}"
-    group: "{{ user }}"
-    mode: '0700'
-
