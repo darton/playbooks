@@ -8,7 +8,7 @@ or
 ```bash
 ansible-playbook -i inventory useradd.yml -e "user=wally" -e allowed_ip="127.0.0.1"
 ```
-## Delete a new privileged user
+## Delete a privileged user
 ```bash
 ansible-playbook -i inventory userdel.yml -e "user=wally"
 ```
